@@ -1,0 +1,12 @@
+{
+  "name": "propuestas-viaje",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Propuestas de viaje interactivas con link único por cliente",
+  "scripts": {
+    "dev": "node scripts/dev.js",
+    "demo": "node scripts/demo.js"
+  },
+  "engines": { "node": ">=18" }
+}

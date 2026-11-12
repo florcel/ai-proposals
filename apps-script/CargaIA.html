@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<base target="_top">
+<style>
+  body{font-family:Arial,sans-serif;font-size:13px;color:#2b2520;margin:14px}
+  label{display:block;font-weight:bold;margin:12px 0 4px}
+  input[type=text],input[type=date],select,textarea{width:100%;box-sizing:border-box;padding:7px;border:1px solid #cfc6bb;border-radius:6px;font:inherit}
+  textarea{height:120px;resize:vertical}
+  .zona{border:2px dashed #cfc6bb;border-radius:8px;padding:16px;text-align:center;cursor:pointer;color:#7a6f64}
+  .zona.lista{border-color:#8A5A2B;color:#8A5A2B;font-weight:bold}
+  button{margin-top:16px;width:100%;padding:10px;background:#8A5A2B;color:#fff;border:0;border-radius:6px;font-weight:bold;font-size:14px;cursor:pointer}
+  button:disabled{opacity:.5;cursor:wait}
+  .msg{margin-top:14px;padding:10px;border-radius:6px;display:none;line-height:1.4}
+  .ok{background:#eef6ea;color:#2f5e1f;display:block}.err{background:#fbeaea;color:#8a1f1f;display:block}.info{background:#f4ede4;display:block}
+  .nota{font-size:11px;color:#7a6f64;margin-top:4px}
+  a{color:#8A5A2B;word-break:break-all}
+</style>
+</head>
+<body>
+  <label>Cliente</label>
+  <input type="text" id="cliente" placeholder="Nombre del cliente">
+
+  <label>Asesor</label>
+  <select id="asesor"><option value="">(sin asesor)</option></select>
+
+  <label>Etapa (opcional)</label>
+  <input type="text" id="etapa" placeholder="Ej: Reservando en noviembre">
+
+  <label>Precio válido hasta (opcional)</label>
+  <input type="date" id="vence">
+  <label style="display:flex;gap:6px;align-items:center;margin-top:10px;font-weight:normal"><input type="checkbox" id="prueba" style="width:auto;margin:0"> Es una propuesta de prueba (no avisa ni cuenta aperturas)</label>
+
+  <label>Cotización de la operadora</label>
+  <div class="zona" id="zona">Tocá para subir un PDF o una captura (PNG/JPG)</div>
+  <input type="file" id="archivo" accept="application/pdf,image/png,image/jpeg,image/webp" style="display:none">
+
+  <label>…o pegá el texto</label>
+  <textarea id="texto" placeholder="Copiá y pegá acá el detalle de vuelos, hotel y precios"></textarea>
+  <div class="nota">Podés usar archivo y texto juntos.</div>
+
+  <button id="btn">Cargar propuesta</button>
+  <div class="msg" id="msg"></div>
+
+<script>
+  var archivo = null;
+  google.script.run.withSuccessHandler(function (lista) {
+    var s = document.getElementById('asesor');
+    lista.forEach(function (n) { var o = document.createElement('option'); o.value = o.textContent = n; s.appendChild(o); });
+    if (lista.length === 1) s.value = lista[0];
+  }).listarAsesores();
+
+  var zona = document.getElementById('zona'), input = document.getElementById('archivo');
+  zona.onclick = function () { input.click(); };
+  input.onchange = function () {
+    var f = input.files[0]; if (!f) return;
+    if (f.size > 20 * 1024 * 1024) { mostrar('err', 'El archivo pesa más de 20 MB.'); return; }
+    var r = new FileReader();
+    r.onload = function () { archivo = { base64: r.result.split(',')[1], mime: f.type }; zona.textContent = '✓ ' + f.name; zona.classList.add('lista'); };
+    r.readAsDataURL(f);
+  };
+
+  function mostrar(tipo, html) { var m = document.getElementById('msg'); m.className = 'msg ' + tipo; m.innerHTML = html; }
+
+  document.getElementById('btn').onclick = function () {
+    var texto = document.getElementById('texto').value;
+    if (!archivo && !texto.trim()) { mostrar('err', 'Subí un archivo o pegá el texto de la cotización.'); return; }
+    var btn = this; btn.disabled = true; btn.textContent = 'Leyendo la cotización…';
+    mostrar('info', 'La IA está leyendo la cotización. Tarda entre 10 y 40 segundos.');
+    google.script.run
+      .withSuccessHandler(function (r) {
+        btn.disabled = false; btn.textContent = 'Cargar otra propuesta';
+        mostrar('ok', '<b>Listo:</b> ' + r.resumen + '<br><br>Link: <a href="' + r.link + '?interno=1" target="_blank">' + r.link + '</a><br><br>Revisá los datos en las pestañas antes de mandarla. Las fotos se agregan a mano (columnas foto, galeria y fotos de hoteles).');
+        archivo = null; input.value = ''; zona.textContent = 'Tocá para subir un PDF o una captura (PNG/JPG)'; zona.classList.remove('lista');
+        document.getElementById('texto').value = '';
+      })
+      .withFailureHandler(function (e) {
+        btn.disabled = false; btn.textContent = 'Cargar propuesta';
+        mostrar('err', e.message || e);
+      })
+      .cargarConIA({
+        base64: archivo && archivo.base64, mime: archivo && archivo.mime, texto: texto,
+        cliente: document.getElementById('cliente').value, asesor: document.getElementById('asesor').value,
+        etapa: document.getElementById('etapa').value, vence: document.getElementById('vence').value, prueba: document.getElementById('prueba').checked
+      });
+  };
+</script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "functions": { "api/p.js": { "includeFiles": "data/**" }, "api/inicio.js": { "includeFiles": "data/**" } },
+  "rewrites": [
+    { "source": "/a/:agencia/p/:id", "destination": "/api/p?id=:id&a=:agencia" },
+    { "source": "/a/:agencia", "destination": "/api/inicio?a=:agencia" },
+    { "source": "/p/:id", "destination": "/api/p?id=:id" },
+    { "source": "/", "destination": "/api/inicio" }
+  ],
+  "headers": [
+    { "source": "/p/(.*)", "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow" }] },
+    { "source": "/a/(.*)", "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow" }] }
+  ]
+}

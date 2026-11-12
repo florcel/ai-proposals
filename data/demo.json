@@ -1,0 +1,284 @@
+{
+  "condiciones": [
+    {
+      "titulo": "",
+      "texto": "Este presupuesto es informativo y está sujeto a disponibilidad y a cambios de tarifa hasta su confirmación y pago."
+    },
+    {
+      "titulo": "Confirmación de servicios",
+      "texto": "Los servicios quedan confirmados una vez acreditado el pago y emitidos los comprobantes de reserva por cada prestador."
+    },
+    {
+      "titulo": "Tarifas",
+      "texto": "Aerolíneas, hoteles y demás proveedores pueden modificar sus tarifas sin aviso previo. El precio se garantiza recién al momento de la emisión o confirmación."
+    },
+    {
+      "titulo": "Pagos",
+      "texto": "Si no se respetan los plazos de pago acordados, la reserva puede cancelarse automáticamente."
+    },
+    {
+      "titulo": "Cancelaciones y modificaciones",
+      "texto": "Cualquier cancelación, cambio de fecha o modificación queda sujeta a las condiciones y penalidades de cada proveedor."
+    },
+    {
+      "titulo": "Documentación",
+      "texto": "Cada pasajero es responsable de viajar con su documentación vigente (DNI o pasaporte con al menos 6 meses de validez posteriores al regreso) y, si el destino lo exige, con visas, permisos y vacunas al día. Ante dudas, consultar con Migraciones antes de viajar. La agencia no se responsabiliza por inconvenientes derivados de documentación incompleta o vencida."
+    },
+    {
+      "titulo": "Impuestos y tasas locales",
+      "texto": "Algunos destinos cobran tasas municipales, hoteleras, resort fee u otros cargos obligatorios que no están incluidos en el precio y se abonan directamente en destino."
+    },
+    {
+      "titulo": "Cambios operativos",
+      "texto": "Los prestadores pueden modificar horarios de vuelos, itinerarios y servicios por razones operativas."
+    },
+    {
+      "titulo": "Responsabilidad",
+      "texto": "La agencia actúa como intermediaria entre el pasajero y los prestadores, y no responde por demoras, cancelaciones, fuerza mayor o decisiones ajenas a su gestión, sin perjuicio de los derechos que otorga la Ley 24.240 de Defensa del Consumidor."
+    },
+    {
+      "titulo": "Asistencia al viajero",
+      "texto": "Coberturas, condiciones y exclusiones se rigen por los términos de la empresa que emite la asistencia."
+    },
+    {
+      "titulo": "Condiciones de vuelos",
+      "texto": "Los pasajes no son reembolsables. Según la tarifa, pueden admitir cambio de fecha con costo adicional. La selección de asientos no está incluida: la aerolínea los asigna en el web check-in, y si se eligen, el costo corre por cuenta del pasajero."
+    },
+    {
+      "titulo": "Equipaje",
+      "texto": "El equipaje adicional, sobredimensionado o especial corre por cuenta del pasajero y se abona a la aerolínea, generalmente con tarjeta de crédito al hacer el check-in."
+    },
+    {
+      "titulo": "Aceptación",
+      "texto": "Aceptar este presupuesto implica conocer y estar de acuerdo con todas estas condiciones."
+    }
+  ],
+  "propuestas": [
+    {
+      "id": "demo-margarita-7Kq2",
+      "cliente": "Lucía",
+      "destino": "Isla Margarita",
+      "fechaDesde": "2027-03-04",
+      "fechaHasta": "2027-03-11",
+      "salida": "Córdoba",
+      "salidaCodigo": "COR",
+      "foto": "",
+      "etapa": "Reservando en noviembre",
+      "asesor": {
+        "nombre": "Andrea Gómez",
+        "telefono": "5493510000000",
+        "instagram": "agtravel",
+        "email": ""
+      },
+      "vuelos": [
+        {
+          "tramo": "Ida",
+          "vuelo": "CM 0789",
+          "fecha": "2027-03-04",
+          "sale_hora": "03:40",
+          "sale_ciudad": "Córdoba",
+          "sale_codigo": "COR",
+          "sale_aeropuerto": "Ambrosio Taravella",
+          "llega_hora": "08:27",
+          "llega_ciudad": "Panamá",
+          "llega_codigo": "PTY",
+          "llega_aeropuerto": "Tocumen",
+          "llega_dias": 0,
+          "clase": "Económica Basic"
+        },
+        {
+          "tramo": "Ida",
+          "vuelo": "CM 0651",
+          "fecha": "2027-03-04",
+          "sale_hora": "09:50",
+          "sale_ciudad": "Panamá",
+          "sale_codigo": "PTY",
+          "sale_aeropuerto": "Tocumen",
+          "llega_hora": "13:36",
+          "llega_ciudad": "Isla Margarita",
+          "llega_codigo": "PMV",
+          "llega_aeropuerto": "Santiago Mariño",
+          "llega_dias": 0,
+          "clase": "Económica Basic"
+        },
+        {
+          "tramo": "Vuelta",
+          "vuelo": "CM 0652",
+          "fecha": "2027-03-11",
+          "sale_hora": "14:46",
+          "sale_ciudad": "Isla Margarita",
+          "sale_codigo": "PMV",
+          "sale_aeropuerto": "Santiago Mariño",
+          "llega_hora": "16:30",
+          "llega_ciudad": "Panamá",
+          "llega_codigo": "PTY",
+          "llega_aeropuerto": "Tocumen",
+          "llega_dias": 0,
+          "clase": "Económica Basic"
+        },
+        {
+          "tramo": "Vuelta",
+          "vuelo": "CM 0788",
+          "fecha": "2027-03-11",
+          "sale_hora": "18:09",
+          "sale_ciudad": "Panamá",
+          "sale_codigo": "PTY",
+          "sale_aeropuerto": "Tocumen",
+          "llega_hora": "02:40",
+          "llega_ciudad": "Córdoba",
+          "llega_codigo": "COR",
+          "llega_aeropuerto": "Ambrosio Taravella",
+          "llega_dias": 1,
+          "clase": "Económica Basic"
+        }
+      ],
+      "incluye": [
+        {
+          "icono": "avion",
+          "texto": "Aéreo desde Córdoba con Copa Airlines"
+        },
+        {
+          "icono": "escudo",
+          "texto": "Asistencia al viajero: médica USD 60.000, cancelación USD 2.000 multicausa"
+        },
+        {
+          "icono": "bus",
+          "texto": "Traslados in/out"
+        },
+        {
+          "icono": "comida",
+          "texto": "All inclusive"
+        }
+      ],
+      "asistencia": {
+        "nombre": "Inter Global",
+        "coberturas": [
+          {
+            "etiqueta": "Asistencia médica",
+            "valor": "USD 60.000"
+          },
+          {
+            "etiqueta": "Preexistencias",
+            "valor": "USD 10.000"
+          },
+          {
+            "etiqueta": "Cancelación",
+            "valor": "USD 2.000 multicausa"
+          },
+          {
+            "etiqueta": "Pérdida de equipaje",
+            "valor": "USD 1.200"
+          },
+          {
+            "etiqueta": "Medicamentos",
+            "valor": "USD 750"
+          },
+          {
+            "etiqueta": "Zona",
+            "valor": "Mundial, excepto país de residencia"
+          }
+        ]
+      },
+      "hoteles": [
+        {
+          "ciudad": "Isla Margarita",
+          "nombre": "LD Plus",
+          "habitacion": "Triple",
+          "regimen": "All inclusive",
+          "desde": "2027-03-04",
+          "hasta": "2027-03-11"
+        }
+      ],
+      "precio": {
+        "moneda": "USD",
+        "sena": 2400,
+        "saldo": 1690,
+        "total": null,
+        "unidad": "por familia",
+        "nota": "Tarifa dinámica: el precio se confirma al reservar."
+      }
+    },
+    {
+      "id": "demo-bariloche-p9Xa",
+      "cliente": "Martín",
+      "destino": "Bariloche",
+      "fechaDesde": "2027-07-15",
+      "fechaHasta": "2027-07-20",
+      "salida": "Córdoba",
+      "salidaCodigo": "COR",
+      "foto": "",
+      "etapa": "Vacaciones de invierno",
+      "asesor": {
+        "nombre": "Andrea Gómez",
+        "telefono": "5493510000000",
+        "instagram": "agtravel",
+        "email": ""
+      },
+      "vuelos": [
+        {
+          "tramo": "Ida",
+          "vuelo": "AR 1550",
+          "fecha": "2027-07-15",
+          "sale_hora": "08:10",
+          "sale_ciudad": "Córdoba",
+          "sale_codigo": "COR",
+          "sale_aeropuerto": "Ambrosio Taravella",
+          "llega_hora": "10:25",
+          "llega_ciudad": "Bariloche",
+          "llega_codigo": "BRC",
+          "llega_aeropuerto": "Teniente Candelaria",
+          "llega_dias": 0,
+          "clase": "Economy Plus"
+        },
+        {
+          "tramo": "Vuelta",
+          "vuelo": "AR 1551",
+          "fecha": "2027-07-20",
+          "sale_hora": "17:40",
+          "sale_ciudad": "Bariloche",
+          "sale_codigo": "BRC",
+          "sale_aeropuerto": "Teniente Candelaria",
+          "llega_hora": "19:50",
+          "llega_ciudad": "Córdoba",
+          "llega_codigo": "COR",
+          "llega_aeropuerto": "Ambrosio Taravella",
+          "llega_dias": 0,
+          "clase": "Economy Plus"
+        }
+      ],
+      "incluye": [
+        {
+          "icono": "avion",
+          "texto": "Aéreo directo con equipaje en bodega"
+        },
+        {
+          "icono": "hotel",
+          "texto": "5 noches con desayuno"
+        },
+        {
+          "icono": "excursion",
+          "texto": "Excursión Circuito Chico"
+        }
+      ],
+      "asistencia": null,
+      "hoteles": [
+        {
+          "ciudad": "Bariloche",
+          "nombre": "Hostería del Lago",
+          "habitacion": "Doble",
+          "regimen": "Desayuno",
+          "desde": "2027-07-15",
+          "hasta": "2027-07-20"
+        }
+      ],
+      "precio": {
+        "moneda": "USD",
+        "sena": null,
+        "saldo": null,
+        "total": 1850,
+        "unidad": "por persona en base doble",
+        "nota": "Precio sujeto a disponibilidad al momento de reservar."
+      }
+    }
+  ]
+}
